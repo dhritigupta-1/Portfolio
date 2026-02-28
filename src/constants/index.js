@@ -63,7 +63,7 @@ export const projects = [
     category: "CPP",
     image: git,
     github: "https://github.com/dhritigupta-1/Mini-Git-Version",
-    live: ""
+    live: "https://mini-git-version.onrender.com/"
   },
   {
     name: "SmartCache-Simulator",
