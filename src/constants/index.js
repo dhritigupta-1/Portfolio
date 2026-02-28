@@ -50,7 +50,7 @@ export const projects = [
   {
     name: "AI Translation Tool",
     description: "A Python-based tool that uses machine learning for accurate text translation.",
-    tags: ["Python", "NLTK"],
+    tags: ["Python", "HTML", "CSS", "Javascript"],
     category: "Python",
     image: ai,
     github: "https://github.com/dhritigupta-1/AI-Translation-Bot",
