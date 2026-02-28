@@ -72,7 +72,7 @@ export const projects = [
     category: "CPP",
     image: smart,
     github: "https://github.com/dhritigupta-1/SmartCache-Simulator",
-    live: ""
+    live: "https://smart-cache.netlify.app/"
   },
   {
     name: "Snake Game",
