@@ -54,7 +54,7 @@ export const projects = [
     category: "Python",
     image: ai,
     github: "https://github.com/dhritigupta-1/AI-Translation-Bot",
-    live: ""
+    live: "https://ai-translation-bot-kb0s.onrender.com"
   },
   {
     name: "Mini-Git-Version",
