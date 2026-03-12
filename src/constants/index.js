@@ -6,22 +6,30 @@ import git from '../assets/images/git.png'
 import smart from '../assets/images/smart.png'
 import snake from '../assets/images/snake.png'
 
-export const skillCategories = ["All", "Languages", "Frameworks", "Tools", "Databases", "Backend"];
+export const skillCategories = ["All", "Languages", "Frameworks", "Tools", "Databases", "Backend", "UI/UX" ];
 
 export const skills = [
   { name: "C++", category: "Languages", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
   { name: "C", category: "Languages", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
   { name: "Java", category: "Languages", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
   { name: "Python", category: "Languages", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+
   { name: "HTML", category: "Frameworks", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
   { name: "CSS", category: "Frameworks", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
   { name: "Tailwind", category: "Frameworks", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
   { name: "ReactJs", category: "Frameworks", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+
   { name: "Github", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+  { name: "VS Code", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+  { name: "XAMPP", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" },
+
   { name: "MySQL", category: "Databases", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
   { name: "MongoDB", category: "Databases", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+
   { name: "NodeJs", category: "Backend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-  { name: "PHP", category: "Backend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" }
+  { name: "PHP", category: "Backend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+
+  { name: "Canva", category: "UI/UX", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" }
 ];
 
 // --- PROJECT CATEGORIES ---
@@ -50,8 +58,8 @@ export const projects = [
   {
     name: "AI Translation Tool",
     description: "A Python-based tool that uses machine learning for accurate text translation.",
-    tags: ["Python", "HTML", "CSS", "Javascript"],
-    category: "Python",
+    tags: ["Python", "HTML", "CSS", "JavaScript"],
+    category: "Python", 
     image: ai,
     github: "https://github.com/dhritigupta-1/AI-Translation-Bot",
     live: "https://ai-translation-bot-kb0s.onrender.com"

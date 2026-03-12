@@ -1,11 +1,8 @@
 @import "tailwindcss";
 
-@theme {
-  --color-accent: #915eff;
-}
-
 /* Base Variables (Light Mode) */
 :root {
+  --color-accent: #915eff;
   --bg-primary: #f8fafc;
   --bg-tertiary: #ffffff;
   --text-main: #0f172a;
@@ -151,3 +148,26 @@ body::after {
 .text-theme-main { color: var(--text-main); }
 .text-theme-secondary { color: var(--text-secondary); }
 .border-theme { border-color: var(--border-color); }
+
+.cursor{
+width:25px;
+height:25px;
+border-radius:50%;
+background:rgba(99,102,241,0.6);
+position:fixed;
+pointer-events:none;
+filter:blur(8px);
+transform:translate(-50%,-50%);
+z-index:9999;
+}
+
+.terminal-cursor::after{
+content:"|";
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%{opacity:1}
+50%{opacity:0}
+100%{opacity:1}
+}
