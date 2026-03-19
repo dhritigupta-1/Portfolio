@@ -24,8 +24,8 @@ const SECTION_COMPONENTS = [
   { key: 'projects', Component: Projects },
   { key: 'certificates', Component: Certificates },
   { key: 'achievements', Component: Achievements },
-  { key: 'leetcode', Component: Leetcode },
-  //{ key: 'contact', Component: Contact },
+  //{ key: 'leetcode', Component: Leetcode },
+  { key: 'contact', Component: Contact },
 ]
 
 function App() {
