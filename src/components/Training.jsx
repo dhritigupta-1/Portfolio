@@ -6,7 +6,7 @@ const Training = () => {
   const isSingleCertificate = training.length === 1
 
   return (
-    <section id="training" className="section-shell scroll-mt-28 py-24 px-6 sm:px-10 md:px-24">
+    <section id="training" className="scroll-mt-28 py-24 px-6 sm:px-10 md:px-24">
 
       {/* Title */}
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 italic">
