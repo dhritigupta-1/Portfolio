@@ -7,6 +7,6 @@ export const NAV_LINKS = [
   { id: "projects", title: "Work" },
   { id: "achievements", title: "Achievements" },
   { id: "certificates", title: "Certificates" },
-  { id: "leetcode", title: "LeetCode" },
+  //{ id: "leetcode", title: "LeetCode" },
   { id: "contact", title: "Contact" },
 ]
