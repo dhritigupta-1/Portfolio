@@ -12,7 +12,7 @@ const Skills = React.lazy(() => import('./components/Skills'));
 const Projects = React.lazy(() => import('./components/Projects'));
 const Achievements = React.lazy(() => import('./components/Achievements'));
 const Certificates = React.lazy(() => import('./components/Certificates'));
-const Leetcode = React.lazy(() => import('./components/Leetcode'));
+//const Leetcode = React.lazy(() => import('./components/Leetcode'));
 const Contact = React.lazy(() => import('./components/Contact'));
 const Training = React.lazy(() => import('./components/Training'));
 
@@ -25,7 +25,7 @@ const SECTION_COMPONENTS = [
   { key: 'certificates', Component: Certificates },
   { key: 'achievements', Component: Achievements },
   { key: 'leetcode', Component: Leetcode },
-  { key: 'contact', Component: Contact },
+  //{ key: 'contact', Component: Contact },
 ]
 
 function App() {
