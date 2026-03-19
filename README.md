@@ -23,9 +23,9 @@ This is my personal portfolio website designed to showcase my projects, technica
 ## 🛠️ Tech Stack Used
 
 **Frontend:**
-- HTML5
-- CSS3
-- JavaScript
+- React Js
+- Tailwind CSS
+
 
 **Design & Styling:**
 - Responsive layout techniques
