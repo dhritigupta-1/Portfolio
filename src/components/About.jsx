@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { MapPin, Mail, Download, Eye } from 'lucide-react'
 import { personalInfo } from '../constants'
 import profilePhoto from '../assets/images/Dhriti.jpg'
+import MagneticButton from './MagneticButton'
 
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -76,7 +77,7 @@ const About = () => {
   }, [])
 
   return (
-    <section ref={sectionRef} id="about" className="py-24 px-10 md:px-24">
+    <section ref={sectionRef} id="about" className="relative z-10 scroll-mt-28 py-24 px-10 md:px-24">
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -133,22 +134,22 @@ const About = () => {
 
           <div className="about-buttons flex flex-wrap gap-4">
 
-            <a
+            <MagneticButton
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-accent px-8 py-3 rounded-xl font-bold hover:scale-105 transition shadow-lg shadow-accent/20"
+              className="flex items-center gap-2 bg-accent px-8 py-3 rounded-xl font-bold hover:scale-105 transition shadow-lg shadow-accent/20 text-white"
             >
               <Eye size={20}/> View My CV
-            </a>
+            </MagneticButton>
 
-            <a
+            <MagneticButton
               href="/resume.pdf"
               download
-              className="inline-flex items-center gap-2 bg-transparent border-2 border-accent text-accent px-8 py-3 rounded-xl font-bold hover:scale-105 transition"
+              className="flex items-center gap-2 bg-transparent border-2 border-accent text-accent px-8 py-3 rounded-xl font-bold hover:scale-105 transition"
             >
               <Download size={20}/> Download My CV
-            </a>
+            </MagneticButton>
 
           </div>
 

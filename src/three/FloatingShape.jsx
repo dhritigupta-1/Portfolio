@@ -6,18 +6,26 @@ function GravityShape({ position, geometry, color }) {
 
   const mesh = useRef()
 
-  useFrame(({ mouse }) => {
+  useFrame(({ mouse }, delta) => {
     if (!mesh.current) return
 
-    mesh.current.position.x += (position[0] + mouse.x * 1.5 - mesh.current.position.x) * 0.05
-    mesh.current.position.y += (position[1] + mouse.y * 1.2 - mesh.current.position.y) * 0.05
+    const smoothing = 1 - Math.exp(-delta * 4)
+    mesh.current.position.x += (position[0] + mouse.x * 1.1 - mesh.current.position.x) * smoothing
+    mesh.current.position.y += (position[1] + mouse.y * 0.9 - mesh.current.position.y) * smoothing
   })
 
   return (
-    <Float speed={2} rotationIntensity={1.3} floatIntensity={2}>
-      <mesh ref={mesh} position={position}>
+    <Float speed={1.6} rotationIntensity={0.9} floatIntensity={1.8}>
+      <mesh ref={mesh} castShadow receiveShadow position={position}>
         {geometry}
-        <meshStandardMaterial color={color} wireframe />
+        <meshStandardMaterial
+          color={color}
+          wireframe
+          roughness={0.15}
+          metalness={0.65}
+          emissive={color}
+          emissiveIntensity={0.2}
+        />
       </mesh>
     </Float>
   )

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,10 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#050816",    // Deep Navy Background
-        secondary: "#aaa6c3",  // Muted Gray Text
-        tertiary: "#151030",   // Card Background
-        accent: "#915eff",    // Professional Purple
+        primary: "var(--bg-primary)",
+        secondary: "var(--text-secondary)",
+        tertiary: "var(--bg-tertiary)",
+        accent: "var(--color-accent)",
+        "theme-main": "var(--text-main)",
+        "theme-border": "var(--border-color)",
       },
     },
   },

@@ -142,32 +142,55 @@ body::after {
   100% { transform: translate(20%, 20%); }
 }
 
-/* Helpers */
-.bg-theme-main { background-color: var(--bg-primary); }
-.bg-theme-card { background-color: var(--bg-tertiary); }
-.text-theme-main { color: var(--text-main); }
-.text-theme-secondary { color: var(--text-secondary); }
-.border-theme { border-color: var(--border-color); }
+/* Removed redundant helpers since tailwind config now handles these */
 
-.cursor{
-width:25px;
-height:25px;
-border-radius:50%;
-background:rgba(99,102,241,0.6);
-position:fixed;
-pointer-events:none;
-filter:blur(8px);
-transform:translate(-50%,-50%);
-z-index:9999;
+.cursor {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.6);
+  position: fixed;
+  pointer-events: none;
+  filter: blur(8px);
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease, filter 0.3s ease;
 }
 
-.terminal-cursor::after{
-content:"|";
-animation:blink 1s infinite;
+.cursor.hover-glow {
+  width: 60px;
+  height: 60px;
+  background: rgba(145, 94, 255, 0.4);
+  filter: blur(12px);
 }
 
-@keyframes blink{
-0%{opacity:1}
-50%{opacity:0}
-100%{opacity:1}
+.terminal-cursor::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+.glass-panel {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 14px 40px rgba(2, 8, 23, 0.22);
+}
+
+.section-shell {
+  position: relative;
+}
+
+.section-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: linear-gradient(130deg, rgba(148, 163, 184, 0.1), rgba(99, 102, 241, 0.04));
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  pointer-events: none;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }

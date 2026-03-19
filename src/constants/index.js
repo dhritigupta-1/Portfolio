@@ -5,8 +5,9 @@ import ai from '../assets/images/ai.png'
 import git from '../assets/images/git.png'
 import smart from '../assets/images/smart.png'
 import snake from '../assets/images/snake.png'
+import train from '../assets/images/training.png'
 
-export const skillCategories = ["All", "Languages", "Frameworks", "Tools", "Databases", "Backend", "UI/UX" ];
+export const skillCategories = ["All", "Languages", "Frameworks", "Tools", "Databases", "Backend", "UI/UX", "Soft Skills"];
 
 export const skills = [
   { name: "C++", category: "Languages", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
@@ -29,7 +30,11 @@ export const skills = [
   { name: "NodeJs", category: "Backend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
   { name: "PHP", category: "Backend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
 
-  { name: "Canva", category: "UI/UX", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" }
+  { name: "Canva", category: "UI/UX", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" },
+
+  { name: "Problem Solving", category: "Soft Skills", icon: "https://cdn-icons-png.flaticon.com/512/4149/4149678.png" },
+{ name: "Communication", category: "Soft Skills", icon: "https://cdn-icons-png.flaticon.com/512/3050/3050525.png" },
+{ name: "Teamwork", category: "Soft Skills", icon: "https://cdn-icons-png.flaticon.com/512/4149/4149643.png" }
 ];
 
 // --- PROJECT CATEGORIES ---
@@ -191,3 +196,71 @@ export const personalInfo = {
   location: "Phagwara, Punjab, India",
   about: "I am a passionate Full Stack Developer with a strong foundation in C++ and Web Technologies. I love building clean, functional, and user-centric applications. Currently exploring the depths of Backend development and AI integration.",
 };
+
+// Education
+export const education = [
+  {
+  degree: "Bachelor of Technology (B.Tech)",
+  field: "Computer Science and Engineering",
+  institution: "Lovely Professional University",
+  year: "2023 – Present",
+  CGPA: "7.49",
+  description: "Focused on Data Structures, Algorithms, Web Development, and AI technologies."
+  },
+
+  {
+  degree: "Senior Secondary (12th)",
+  field: "Science (Non-Medical)",
+  institution: "Swami Sant Dass Public School",
+  year: "2021 – 2023",
+  percentage: "80%",
+  description: "Studied Physics, Chemistry, and Mathematics."
+  },
+
+  {
+  degree: "Secondary School (10th)",
+  institution: "Swami Sant Dass Public School",
+  year: "2020 – 2021",
+  percentage: "91.6%",
+  description: "Completed foundational education."
+  }
+
+  ]
+
+// Achievements
+
+export const achievements = [
+
+  {
+  title: "Achieved 50 days of coding streak on LeetCode",
+  description: "Maintained a consistent coding practice routine."
+  },
+
+  {
+  title: "Solved 270+ problems on LeetCode",
+  description: "Demonstrated strong problem-solving skills across various difficulty levels."
+  },
+
+  {
+  title: "Solved 60+ problems on GeeksforGeeks",
+  description: "Showcased proficiency in solving algorithmic problems."
+  },
+
+  {
+  title: "Achieved 3-star rating in Java on Hackerrank",
+  description: "Demonstrated proficiency in Java programming and problem-solving."
+  }
+]
+
+// Training
+export const training = [
+  {
+    title: "Data Structures & Algorithms",
+    platform: "Hitbullseye",
+    duration: "July 2025",
+    description:
+      "Practicing problem solving using C++ with focus on optimization and competitive programming.",
+    pdf: "training.pdf",
+    image: train
+  }
+]

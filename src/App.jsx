@@ -1,31 +1,35 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import About from './components/About'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import Certificates from './components/Certificates'
-import Contact from './components/Contact'
-import GlowCursor from './components/GlowCursor'
 import Reveal from './components/Reveal'
-import Background3D from "./three/Background3D";
+import GlowCursor from './components/GlowCursor'
+import useLenisScroll from './hooks/useLenisScroll'
 
-import Lenis from "lenis"
+const Background3D = React.lazy(() => import('./three/Background3D'));
+const About = React.lazy(() => import('./components/About'));
+const Education = React.lazy(() => import('./components/Education'));
+const Skills = React.lazy(() => import('./components/Skills'));
+const Projects = React.lazy(() => import('./components/Projects'));
+const Achievements = React.lazy(() => import('./components/Achievements'));
+const Certificates = React.lazy(() => import('./components/Certificates'));
+const Leetcode = React.lazy(() => import('./components/Leetcode'));
+const Contact = React.lazy(() => import('./components/Contact'));
+const Training = React.lazy(() => import('./components/Training'));
+
+const SECTION_COMPONENTS = [
+  { key: 'about', Component: About },
+  { key: 'education', Component: Education },
+  { key: 'skills', Component: Skills },
+  { key: 'training', Component: Training },
+  { key: 'projects', Component: Projects },
+  { key: 'certificates', Component: Certificates },
+  { key: 'achievements', Component: Achievements },
+  { key: 'leetcode', Component: Leetcode },
+  { key: 'contact', Component: Contact },
+]
 
 function App() {
-
-  useEffect(() => {
-
-    const lenis = new Lenis()
-
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-
-  }, [])
+  useLenisScroll()
 
   return (
     <div className="relative">
@@ -34,37 +38,26 @@ function App() {
       <div className="grid-bg"></div>
 
       {/* 3D Background */}
-      <Background3D />
+      <React.Suspense fallback={null}>
+        <Background3D />
+      </React.Suspense>
 
       {/* Glow Cursor */}
       <GlowCursor />
 
       <Navbar />
 
-      <main className="space-y-10">
-
+      <main className="space-y-10 pb-6">
         {/* Hero not wrapped so it loads immediately */}
         <Hero />
 
-        <Reveal>
-          <About />
-        </Reveal>
-
-        <Reveal>
-          <Skills />
-        </Reveal>
-
-        <Reveal>
-          <Projects />
-        </Reveal>
-
-        <Reveal>
-          <Certificates />
-        </Reveal>
-
-        <Reveal>
-          <Contact />
-        </Reveal>
+        <React.Suspense fallback={<div className="py-20 text-center text-secondary">Loading section...</div>}>
+          {SECTION_COMPONENTS.map(({ key, Component: SectionComponent }, index) => (
+            <Reveal key={key} delay={index * 0.05}>
+              {React.createElement(SectionComponent)}
+            </Reveal>
+          ))}
+        </React.Suspense>
 
       </main>
 

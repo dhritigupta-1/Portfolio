@@ -1,39 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Lottie from 'lottie-react';
 import { ChevronDown } from 'lucide-react';
+import useTypewriter from '../hooks/useTypewriter';
+import MagneticButton from './MagneticButton';
 // Import your animation file
 import robotAnimation from '../assets/animations/hello.json';
 
 const Hero = () => {
-  const [text, setText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [loopNum, setLoopNum] = useState(0);
-  const [typingSpeed, setTypingSpeed] = useState(150);
-
   const phrases = ["Web Developer", "C++ Enthusiast", "Full Stack Developer"];
-
-  useEffect(() => {
-    let timer = setTimeout(() => {
-      handleTyping();
-    }, typingSpeed);
-    return () => clearTimeout(timer);
-  }, [text, isDeleting]);
-
-  const handleTyping = () => {
-    const i = loopNum % phrases.length;
-    const fullPhrase = phrases[i];
-
-    if (!isDeleting) {
-      setText(fullPhrase.substring(0, text.length + 1));
-      if (text === fullPhrase) setTimeout(() => setIsDeleting(true), 1500);
-    } else {
-      setText(fullPhrase.substring(0, text.length - 1));
-      if (text === "") {
-        setIsDeleting(false);
-        setLoopNum(loopNum + 1);
-      }
-    }
-  };
+  const text = useTypewriter(phrases);
 
   return (
     <section id="home" className="relative h-screen flex flex-col lg:flex-row items-center justify-between px-10 md:px-24 pt-20 overflow-hidden">
@@ -54,18 +29,18 @@ const Hero = () => {
         </div>
         
         <div className="flex flex-wrap gap-4 mt-12">
-          <a href="#projects" className="bg-accent hover:bg-accent/80 px-8 py-3 rounded-full font-bold transition-all shadow-lg shadow-accent/20">
+          <MagneticButton href="#projects" className="bg-accent hover:bg-accent/80 px-8 py-3 rounded-full font-bold transition-all shadow-lg shadow-accent/20 text-white">
             View My Work
-          </a>
-          <a href="#skills" className="border border-accent text-accent hover:bg-accent hover:text-white px-8 py-3 rounded-full font-bold transition-all">
+          </MagneticButton>
+          <MagneticButton href="#skills" className="border border-accent text-accent hover:bg-accent hover:text-white px-8 py-3 rounded-full font-bold transition-all">
             Explore My Skills
-          </a>
+          </MagneticButton>
         </div>
       </div>
 
       {/* RIGHT SIDE: YOUR LOTTIE ANIMATION */}
       <div className="flex-1 flex justify-center lg:justify-end">
-        <div className="w-[300px] md:w-[500px] drop-shadow-[0_0_30px_rgba(145,94,255,0.3)]">
+        <div className="w-75 md:w-125 drop-shadow-[0_0_30px_rgba(145,94,255,0.3)]">
           <Lottie 
             animationData={robotAnimation} 
             loop={true} 

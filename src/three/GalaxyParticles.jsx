@@ -1,13 +1,16 @@
+/* eslint-disable react-hooks/purity */
 import { Points, PointMaterial } from "@react-three/drei"
+import { useFrame } from "@react-three/fiber"
 import { useMemo } from "react"
-import * as THREE from "three"
+import { useRef } from "react"
 
 export default function GalaxyParticles() {
+  const pointsRef = useRef()
 
   const particles = useMemo(() => {
-    const positions = new Float32Array(3000 * 3)
+    const positions = new Float32Array(2200 * 3)
 
-    for (let i = 0; i < 3000; i++) {
+    for (let i = 0; i < 2200; i++) {
       positions[i * 3] = (Math.random() - 0.5) * 80
       positions[i * 3 + 1] = (Math.random() - 0.5) * 80
       positions[i * 3 + 2] = (Math.random() - 0.5) * 80
@@ -16,14 +19,20 @@ export default function GalaxyParticles() {
     return positions
   }, [])
 
+  useFrame((_, delta) => {
+    if (!pointsRef.current) return
+    pointsRef.current.rotation.y += delta * 0.01
+  })
+
   return (
-    <Points positions={particles} stride={3}>
+    <Points ref={pointsRef} positions={particles} stride={3}>
       <PointMaterial
         transparent
         color="#ffffff"
-        size={0.2}
+        size={0.16}
         sizeAttenuation
         depthWrite={false}
+        opacity={0.85}
       />
     </Points>
   )

@@ -1,35 +1,111 @@
-import Tilt from "react-parallax-tilt"
-import { motion } from "framer-motion"
+import React, { useEffect, useRef } from "react";
+import Tilt from "react-parallax-tilt";
+import { Github, Link as LinkIcon } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
-export default function ProjectCard({project, openModal}){
+gsap.registerPlugin(ScrollTrigger);
 
-return(
+export default function ProjectCard({ project, onClick }) {
+  const cardRef = useRef(null);
 
-<Tilt glareEnable={true} glareMaxOpacity={0.2}>
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return undefined;
 
-<motion.div
-whileHover={{scale:1.05}}
-className="bg-white/5 backdrop-blur-xl p-6 rounded-xl cursor-pointer"
-onClick={()=>openModal(project)}
->
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 35 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.65,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 86%",
+            once: true,
+          },
+        }
+      );
+    }, cardRef);
 
-<h3 className="text-xl font-bold">
-{project.title}
-</h3>
+    return () => ctx.revert();
+  }, []);
 
-<p className="text-gray-400 mt-2">
-{project.desc}
-</p>
+  return (
+    <Tilt
+      glareEnable
+      glareMaxOpacity={0.15}
+      tiltMaxAngleX={10}
+      tiltMaxAngleY={10}
+      className="h-full"
+    >
+      <div
+        ref={cardRef}
+        className="glass-panel bg-tertiary/65 rounded-3xl overflow-hidden border border-white/10 flex flex-col group hover:border-accent/40 transition-all duration-500 cursor-pointer h-full hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/20"
+        onClick={() => onClick(project)}
+      >
+        {/* IMAGE */}
+        <div className="h-52 w-full overflow-hidden shrink-0">
+          <img
+            src={project.image}
+            alt={project.name}
+            className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+          />
+        </div>
 
-<img
-src={project.image}
-className="mt-4 rounded-lg opacity-80 hover:opacity-100 transition"
-/>
+        {/* CONTENT */}
+        <div className="p-8 flex flex-col grow text-center items-center">
+          
+          {/* TAGS */}
+          <div className="flex flex-wrap justify-center gap-2 mb-6">
+            {project.tags.map(tag => (
+              <span
+                key={tag}
+                className="px-4 py-1 rounded-full border border-white/20 text-[12px] text-secondary bg-white/5"
+              >
+                #{tag}
+              </span>
+            ))}
+          </div>
 
-</motion.div>
+          {/* TITLE */}
+          <h3 className="text-2xl font-bold mb-4 text-theme-main">
+            {project.name}
+          </h3>
 
-</Tilt>
+          {/* DESCRIPTION */}
+          <p className="text-secondary text-sm leading-relaxed mb-8 grow">
+            {project.description}
+          </p>
 
-)
-
+          {/* LINKS */}
+          <div className="flex gap-6 mt-auto">
+            {project.live && (
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="text-theme-main hover:text-accent transition transform hover:scale-110"
+              >
+                <LinkIcon size={24} />
+              </a>
+            )}
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="text-theme-main hover:text-accent transition transform hover:scale-110"
+            >
+              <Github size={24} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </Tilt>
+  );
 }
