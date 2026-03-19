@@ -21,7 +21,7 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="section-shell scroll-mt-28 py-20 px-6">
+    <section id="projects" className="scroll-mt-28 py-20 px-6">
 
       {/* TITLE */}
       <div className="text-center mb-10">
