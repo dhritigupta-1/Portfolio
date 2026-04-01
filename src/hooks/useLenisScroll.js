@@ -4,9 +4,10 @@ import Lenis from "lenis"
 export default function useLenisScroll() {
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.08,
+      lerp: 0.05,
       smoothWheel: true,
-      syncTouch: false,
+      syncTouch: true,
+      wheelMultiplier: 1.1,
     })
 
     let rafId = 0

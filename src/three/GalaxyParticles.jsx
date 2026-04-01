@@ -8,9 +8,9 @@ export default function GalaxyParticles() {
   const pointsRef = useRef()
 
   const particles = useMemo(() => {
-    const positions = new Float32Array(2200 * 3)
+    const positions = new Float32Array(500 * 3) // Safe-mode reduction from 1000
 
-    for (let i = 0; i < 2200; i++) {
+    for (let i = 0; i < 500; i++) {
       positions[i * 3] = (Math.random() - 0.5) * 80
       positions[i * 3 + 1] = (Math.random() - 0.5) * 80
       positions[i * 3 + 2] = (Math.random() - 0.5) * 80
@@ -18,6 +18,8 @@ export default function GalaxyParticles() {
 
     return positions
   }, [])
+
+
 
   useFrame((_, delta) => {
     if (!pointsRef.current) return

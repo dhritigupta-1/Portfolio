@@ -5,6 +5,8 @@ import Reveal from './components/Reveal'
 import GlowCursor from './components/GlowCursor'
 import useLenisScroll from './hooks/useLenisScroll'
 
+import ErrorBoundary from './components/ErrorBoundary'
+
 const Background3D = React.lazy(() => import('./three/Background3D'));
 const About = React.lazy(() => import('./components/About'));
 const Education = React.lazy(() => import('./components/Education'));
@@ -12,7 +14,7 @@ const Skills = React.lazy(() => import('./components/Skills'));
 const Projects = React.lazy(() => import('./components/Projects'));
 const Achievements = React.lazy(() => import('./components/Achievements'));
 const Certificates = React.lazy(() => import('./components/Certificates'));
-//const Leetcode = React.lazy(() => import('./components/Leetcode'));
+// const Leetcode = React.lazy(() => import('./components/Leetcode'));
 const Contact = React.lazy(() => import('./components/Contact'));
 const Training = React.lazy(() => import('./components/Training'));
 
@@ -24,7 +26,7 @@ const SECTION_COMPONENTS = [
   { key: 'projects', Component: Projects },
   { key: 'certificates', Component: Certificates },
   { key: 'achievements', Component: Achievements },
-  //{ key: 'leetcode', Component: Leetcode },
+  // { key: 'leetcode', Component: Leetcode },
   { key: 'contact', Component: Contact },
 ]
 
@@ -34,13 +36,13 @@ function App() {
   return (
     <div className="relative">
 
-      {/* Background Grid */}
-      <div className="grid-bg"></div>
+      {/* 3D Background with Error Boundary Fallback */}
+      <ErrorBoundary fallback={<div className="fixed inset-0 -z-10 bg-[#010208]" />}>
+        <React.Suspense fallback={<div className="fixed inset-0 -z-10 bg-[#010208]" />}>
+          <Background3D />
+        </React.Suspense>
+      </ErrorBoundary>
 
-      {/* 3D Background */}
-      <React.Suspense fallback={null}>
-        <Background3D />
-      </React.Suspense>
 
       {/* Glow Cursor */}
       <GlowCursor />

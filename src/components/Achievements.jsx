@@ -1,5 +1,6 @@
 import React from "react"
 import { achievements } from "../constants"
+import Reveal from "./Reveal"
 
 const Achievements = () => {
   return (
@@ -10,15 +11,16 @@ const Achievements = () => {
 
       <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
         {achievements.map((item, index) => (
-          <div
-            key={index}
-            className="p-8 border border-white/10 rounded-2xl
-hover:border-accent hover:shadow-lg hover:shadow-accent/20
-transition duration-500 backdrop-blur-md"
-          >
-            <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-            <p className="text-secondary text-sm">{item.description}</p>
-          </div>
+          <Reveal key={index} delay={index * 0.2}>
+            <div
+              className="p-8 border border-white/10 rounded-2xl
+  hover:border-accent hover:shadow-lg hover:shadow-accent/20
+  transition duration-500 backdrop-blur-md h-full"
+            >
+              <h3 className="text-xl font-bold mb-4">{item.title}</h3>
+              <p className="text-secondary text-sm">{item.description}</p>
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>

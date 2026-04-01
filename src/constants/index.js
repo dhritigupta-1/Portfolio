@@ -31,10 +31,12 @@ export const skills = [
   { name: "PHP", category: "Backend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
 
   { name: "Canva", category: "UI/UX", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" },
+  { name: "Figma", category: "UI/UX", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+
 
   { name: "Problem Solving", category: "Soft Skills", icon: "https://cdn-icons-png.flaticon.com/512/4149/4149678.png" },
-{ name: "Communication", category: "Soft Skills", icon: "https://cdn-icons-png.flaticon.com/512/3050/3050525.png" },
-{ name: "Teamwork", category: "Soft Skills", icon: "https://cdn-icons-png.flaticon.com/512/4149/4149643.png" }
+  { name: "Communication", category: "Soft Skills", icon: "https://cdn-icons-png.flaticon.com/512/3050/3050525.png" },
+  { name: "Teamwork", category: "Soft Skills", icon: "https://cdn-icons-png.flaticon.com/512/4149/4149643.png" }
 ];
 
 // --- PROJECT CATEGORIES ---
@@ -47,9 +49,9 @@ export const projects = [
     description: "A platform for managing and coordinating disaster relief efforts effectively.",
     tags: ["React", "Tailwind", "NodeJs", "MongoDB"],
     category: "Web Development",
-    image: disaster, 
+    image: disaster,
     github: "https://github.com/dhritigupta-1/disaster-management",
-    live: "https://disater-management.netlify.app/"
+    live: "https://disaster-management-mu.vercel.app/"
   },
   {
     name: "Bike_Rental",
@@ -58,16 +60,16 @@ export const projects = [
     category: "Web Development",
     image: bike,
     github: "https://github.com/dhritigupta-1/Bike_Rental",
-    live: "" 
+    live: ""
   },
   {
     name: "AI Translation Tool",
     description: "A Python-based tool that uses machine learning for accurate text translation.",
     tags: ["Python", "HTML", "CSS", "JavaScript"],
-    category: "Python", 
+    category: "Python",
     image: ai,
     github: "https://github.com/dhritigupta-1/AI-Translation-Bot",
-    live: "https://ai-translation-bot-kb0s.onrender.com"
+    live: "https://ai-translation-bot.vercel.app/"
   },
   {
     name: "Mini-Git-Version",
@@ -85,7 +87,7 @@ export const projects = [
     category: "CPP",
     image: smart,
     github: "https://github.com/dhritigupta-1/SmartCache-Simulator",
-    live: "https://smart-cache.netlify.app/"
+    live: "https://smart-cache-simulator.vercel.app/"
   },
   {
     name: "Snake Game",
@@ -111,32 +113,32 @@ export const certificates = [
   },
   {
     title: "Build Generative AI",
-    issuer: "MongoDB University",
+    issuer: "MongoDB",
     pdf: "/certs/Build Generative AI Certificate.pdf"
   },
   {
-    title: "Certificate",
-    issuer: "Certification Platform",
+    title: "Gen AI Nasscom",
+    issuer: "FutureSkills Prime",
     pdf: "/certs/certificate-CERT-1771577111135.pdf"
   },
   {
     title: "ChatGPT Certificate",
-    issuer: "OpenAI / Udemy",
+    issuer: "Infosys",
     pdf: "/certs/Chatgpt Certificate.pdf"
   },
   {
     title: "C++ Certificate",
-    issuer: "Coding Platform",
+    issuer: "Iamneo",
     pdf: "/certs/CPP Certificate.pdf"
   },
   {
     title: "DSA Certificate",
-    issuer: "Data Structures & Algorithms",
+    issuer: "Iamneo",
     pdf: "/certs/DSA Certificate.pdf"
   },
   {
     title: "Formal Language Certificate",
-    issuer: "Computer Science",
+    issuer: "Infosys",
     pdf: "/certs/Formal Language Certificate.pdf"
   },
   {
@@ -146,12 +148,12 @@ export const certificates = [
   },
   {
     title: "Java Certificate",
-    issuer: "Coding Platform",
+    issuer: "Iamneo",
     pdf: "/certs/Java Certificate.pdf"
   },
   {
     title: "Master Generative AI & Generative AI tools (ChatGPT & more)",
-    issuer: "Udemy",
+    issuer: "Infosys",
     pdf: "/certs/Master Generative AI & Generative AI tools (ChatGPT & more) Certificate.pdf"
   },
   {
@@ -200,55 +202,55 @@ export const personalInfo = {
 // Education
 export const education = [
   {
-  degree: "Bachelor of Technology (B.Tech)",
-  field: "Computer Science and Engineering",
-  institution: "Lovely Professional University",
-  year: "2023 – Present",
-  CGPA: "7.49",
-  description: "Focused on Data Structures, Algorithms, Web Development, and AI technologies."
+    degree: "Bachelor of Technology (B.Tech)",
+    field: "Computer Science and Engineering",
+    institution: "Lovely Professional University",
+    year: "2023 – Present",
+    CGPA: "7.49",
+    description: "Focused on Data Structures, Algorithms, Web Development, and AI technologies."
   },
 
   {
-  degree: "Senior Secondary (12th)",
-  field: "Science (Non-Medical)",
-  institution: "Swami Sant Dass Public School",
-  year: "2021 – 2023",
-  percentage: "80%",
-  description: "Studied Physics, Chemistry, and Mathematics."
+    degree: "Senior Secondary (12th)",
+    field: "Science (Non-Medical)",
+    institution: "Swami Sant Dass Public School",
+    year: "2021 – 2023",
+    percentage: "80%",
+    description: "Studied Physics, Chemistry, and Mathematics."
   },
 
   {
-  degree: "Secondary School (10th)",
-  institution: "Swami Sant Dass Public School",
-  year: "2020 – 2021",
-  percentage: "91.6%",
-  description: "Completed foundational education."
+    degree: "Secondary School (10th)",
+    institution: "Swami Sant Dass Public School",
+    year: "2020 – 2021",
+    percentage: "91.6%",
+    description: "Completed foundational education."
   }
 
-  ]
+]
 
 // Achievements
 
 export const achievements = [
 
   {
-  title: "Achieved 50 days of coding streak on LeetCode",
-  description: "Maintained a consistent coding practice routine."
+    title: "Achieved 50 days of coding streak on LeetCode",
+    description: "Maintained a consistent coding practice routine."
   },
 
   {
-  title: "Solved 270+ problems on LeetCode",
-  description: "Demonstrated strong problem-solving skills across various difficulty levels."
+    title: "Solved 270+ problems on LeetCode",
+    description: "Demonstrated strong problem-solving skills across various difficulty levels."
   },
 
   {
-  title: "Solved 60+ problems on GeeksforGeeks",
-  description: "Showcased proficiency in solving algorithmic problems."
+    title: "Solved 60+ problems on GeeksforGeeks",
+    description: "Showcased proficiency in solving algorithmic problems."
   },
 
   {
-  title: "Achieved 3-star rating in Java on Hackerrank",
-  description: "Demonstrated proficiency in Java programming and problem-solving."
+    title: "Achieved 3-star rating in Java on Hackerrank",
+    description: "Demonstrated proficiency in Java programming and problem-solving."
   }
 ]
 

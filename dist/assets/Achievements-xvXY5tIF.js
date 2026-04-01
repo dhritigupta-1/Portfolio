@@ -1,3 +1,0 @@
-import{j as e}from"./index-CljUnWDb.js";import{d as r}from"./index-CpHf4Qd_.js";const c=()=>e.jsxs("section",{id:"achievements",className:"py-24 px-10 md:px-24",children:[e.jsx("h2",{className:"text-4xl md:text-5xl font-bold text-center mb-16 italic",children:"Achievements"}),e.jsx("div",{className:"max-w-4xl mx-auto grid md:grid-cols-2 gap-8",children:r.map((s,t)=>e.jsxs("div",{className:`p-8 border border-white/10 rounded-2xl\r
-hover:border-accent hover:shadow-lg hover:shadow-accent/20\r
-transition duration-500 backdrop-blur-md`,children:[e.jsx("h3",{className:"text-xl font-bold mb-4",children:s.title}),e.jsx("p",{className:"text-secondary text-sm",children:s.description})]},t))})]});export{c as default};

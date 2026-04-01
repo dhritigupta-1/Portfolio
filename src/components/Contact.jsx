@@ -30,13 +30,7 @@ const Contact = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          access_key: '84d32812-e5b6-4be3-83fb-2c9d54338d83',
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          subject: `New Portfolio Contact from ${formData.name}`
-        }),
+
       });
 
       const result = await response.json();

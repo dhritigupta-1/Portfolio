@@ -44,7 +44,7 @@ export default function ProjectCard({ project, onClick }) {
     >
       <div
         ref={cardRef}
-        className="glass-panel bg-tertiary/65 rounded-3xl overflow-hidden border border-white/10 flex flex-col group hover:border-accent/40 transition-all duration-500 cursor-pointer h-full hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/20"
+        className="glass-panel bg-tertiary/65 rounded-3xl overflow-hidden border border-theme-border flex flex-col group hover:border-accent/40 transition-all duration-500 cursor-pointer h-full hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/20"
         onClick={() => onClick(project)}
       >
         {/* IMAGE */}
@@ -64,7 +64,7 @@ export default function ProjectCard({ project, onClick }) {
             {project.tags.map(tag => (
               <span
                 key={tag}
-                className="px-4 py-1 rounded-full border border-white/20 text-[12px] text-secondary bg-white/5"
+                className="px-4 py-1 rounded-full border border-theme-border text-[12px] text-secondary bg-primary/5"
               >
                 #{tag}
               </span>
